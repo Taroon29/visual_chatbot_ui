@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState} from "react";
 import { Box, Typography, TextField, Button, Chip, Grid, Card, CardContent } from "@mui/material";
 import { makeStyles } from '@mui/styles';
 import layoutStyles from './layout.style';
@@ -6,11 +6,22 @@ import Header from '../Header/Header';
 import Workspacegif from '../../Assets/workspace_gif.gif'
 import Databasegif from '../../Assets/database_gif.gif'
 import Knowledgebasegif from '../../Assets/knowledgebase_gif.gif'
+import WorkspacePopup from "../CreateWorkspacePopup/CreateWorkspacePopup";
 
 
 const useStyles = makeStyles(layoutStyles);
 const Layout = () => {
     const classes = useStyles();
+
+    const [isPopupOpen, setIsPopupOpen] = useState(false);
+  
+    const handlecardClick = () => {
+      setIsPopupOpen(true); 
+    };
+  
+    const handleClosePopup = () => {
+      setIsPopupOpen(false); // Close the popup
+    };
 
     return (
         <div>
@@ -69,7 +80,7 @@ const Layout = () => {
                         },
                     ].map((card, index) => (
                         <Grid item xs={12} sm={4} key={index}>
-                            <Card className={classes.card}>
+                            <Card className={classes.card} onClick={handlecardClick}>
                                 <CardContent>
                                     <Box className={classes.cardIcon} sx={{display:'flex',justifyContent:'space-between'}}>
                                         <img
@@ -103,6 +114,8 @@ const Layout = () => {
                     AI helping with data retrieval and analysis | AI-powered querying of structured data | AI and databases working together for smart insights.
                 </Box>
             </Box>
+
+            <WorkspacePopup open={isPopupOpen} onClose={handleClosePopup} />
         </div>
     );
 };
