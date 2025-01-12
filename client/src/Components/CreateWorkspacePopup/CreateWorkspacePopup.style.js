@@ -44,6 +44,12 @@ const WorkspacePopupStyles = () => ({
         "& .MuiInputBase-input": {
             padding: '10px!important'
         },
+        "& .MuiFormHelperText-root":{
+            position: 'absolute!important',
+            top: '40px!important',
+            left: '-12px!important',
+            fontSize: '10px!important',
+        }
     },
     uploadBox: {
         border: "1px dashed #CCCCCC",
@@ -54,6 +60,12 @@ const WorkspacePopupStyles = () => ({
         cursor: "pointer",
         marginBottom:'30px',
         position:'relative',
+    },
+    uploadBoxFileerror:{
+        position: 'absolute!important',
+        top: '136px!important',
+        left: '0px!important',
+        fontSize: '10px!important',
     },
     uploadBoxImg: {
         width: "22px",
