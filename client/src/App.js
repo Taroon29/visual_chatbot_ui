@@ -8,6 +8,7 @@ import 'simplebar-react/dist/simplebar.min.css';
 
 import LayoutPage from './Components/Layoutpage/Layout';
 import AllWorkspaces from './Components/AllWorkspaces/AllWorkspaces';
+import SelectWorkspaceComponent from './Components/SelectWorkspaceComponent/SelectWorkspaceComponent';
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
             <Routes>
               <Route path="/" element={<LayoutPage />} />
               <Route path="/allworkspace" element={<AllWorkspaces />} />
+              <Route path="/select-workspace" element={<SelectWorkspaceComponent />} />
               {/* Add additional routes here if needed */}
             </Routes>
           </div>
