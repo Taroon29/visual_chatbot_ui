@@ -1,11 +1,13 @@
 // App.js
 import React from 'react';
 import './App.css';
-import LayoutPage from './Components/Layoutpage/Layout';
 import { DataProvider } from './Context/dataContext';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { SnackbarProvider } from 'notistack';
 import 'simplebar-react/dist/simplebar.min.css';
+
+import LayoutPage from './Components/Layoutpage/Layout';
+import AllWorkspaces from './Components/AllWorkspaces/AllWorkspaces';
 
 function App() {
   return (
@@ -30,6 +32,7 @@ function App() {
           <div className="w-full h-screen">
             <Routes>
               <Route path="/" element={<LayoutPage />} />
+              <Route path="/allworkspace" element={<AllWorkspaces />} />
               {/* Add additional routes here if needed */}
             </Routes>
           </div>
